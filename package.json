@@ -4,6 +4,10 @@
   "description": "semantic-release plugin to bump AliucordRN plugin version in the manifest file",
   "main": "dist/index.js",
   "type": "module",
+  "files": [
+    "dist/**/*.js",
+    "README.md"
+  ],
   "scripts": {
     "build": "ncc build src/index.ts -m -s",
     "format": "prettier --write .",
