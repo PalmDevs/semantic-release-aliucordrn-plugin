@@ -1,7 +1,7 @@
 {
   "name": "semantic-release-aliucord-plugins",
   "version": "1.0.0",
-  "description": "semantic-release plugin for AliucordRN plugin development",
+  "description": "semantic-release plugin to bump AliucordRN plugin version in the manifest file",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
