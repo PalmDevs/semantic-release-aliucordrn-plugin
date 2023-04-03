@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/compare/v1.0.0...v1.0.1) (2023-04-03)
+
+
+### Bug Fixes
+
+* **index:** not exposing functions properly ([b5acb13](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/commit/b5acb133f25865efa34a20aaad842b9792499ffc))
+
 # 1.0.0 (2023-04-03)
 
 
