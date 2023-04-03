@@ -1,5 +1,5 @@
 {
-  "name": "semantic-release-aliucord-plugins",
+  "name": "semantic-release-aliucord-plugin",
   "version": "1.0.0",
   "description": "semantic-release plugin to bump AliucordRN plugin version in the manifest file",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PalmDevs/semantic-release-aliucordrn-plugins.git"
+    "url": "git+https://github.com/PalmDevs/semantic-release-aliucordrn-plugin.git"
   },
   "keywords": [
     "aliucord",
@@ -23,9 +23,9 @@
   "author": "PalmDevs",
   "license": "GPL-3.0-only",
   "bugs": {
-    "url": "https://github.com/PalmDevs/semantic-release-aliucordrn-plugins/issues"
+    "url": "https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/issues"
   },
-  "homepage": "https://github.com/PalmDevs/semantic-release-aliucordrn-plugins#readme",
+  "homepage": "https://github.com/PalmDevs/semantic-release-aliucordrn-plugin#readme",
   "devDependencies": {
     "@saithodev/semantic-release-backmerge": "^3.1.0",
     "@tsconfig/strictest": "^2.0.0",
