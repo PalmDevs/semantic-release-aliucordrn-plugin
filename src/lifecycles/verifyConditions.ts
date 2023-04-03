@@ -5,8 +5,6 @@ import type PluginConfig from '../types/PluginConfig.js';
 export default function verifyConditions(
     pluginConfig: PluginConfig | null | undefined
 ) {
-    const errors = [];
-
     if (!pluginConfig) pluginConfig = {};
     pluginConfig.manifestFile = resolvePath(
         process.cwd(),
@@ -14,8 +12,7 @@ export default function verifyConditions(
     );
 
     if (!existsSync(pluginConfig.manifestFile))
-        errors.push(
-            new Error(`Cannot find manifest file: ${pluginConfig.manifestFile}`)
+        throw new Error(
+            `Cannot find manifest file: ${pluginConfig.manifestFile}`
         );
-    if (errors.length) throw new AggregateError(errors);
 }
