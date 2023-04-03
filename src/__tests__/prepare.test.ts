@@ -2,7 +2,7 @@ import { expect } from 'expect';
 import { copyFileSync, readFileSync, rmSync } from 'fs';
 import { test } from 'uvu';
 import type { Context } from 'semantic-release';
-import prepare from '../lifecycles/prepare.js';
+import { prepare } from '../index.js';
 
 const context = {
     nextRelease: {

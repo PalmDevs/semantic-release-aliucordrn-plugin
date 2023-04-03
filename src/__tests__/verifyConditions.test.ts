@@ -1,6 +1,6 @@
 import { expect } from 'expect';
 import { test } from 'uvu';
-import verifyConditions from '../lifecycles/verifyConditions.js';
+import { verifyConditions } from '../index.js';
 
 test("should throw error when manifest doesn't exist", () => {
     expect(() => {
