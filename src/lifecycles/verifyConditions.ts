@@ -1,8 +1,11 @@
-import { existsSync } from 'fs';
-import { resolve as resolvePath } from 'path';
+import fs = require('fs');
+import path = require('path');
 import type PluginConfig from '../types/PluginConfig.js';
 
-export default function verifyConditions(
+const { existsSync } = fs;
+const { resolve: resolvePath } = path;
+
+export = function verifyConditions(
     pluginConfig: PluginConfig | null | undefined
 ) {
     if (!pluginConfig) pluginConfig = {};
@@ -15,4 +18,4 @@ export default function verifyConditions(
         throw new Error(
             `Cannot find manifest file: ${pluginConfig.manifestFile}`
         );
-}
+};

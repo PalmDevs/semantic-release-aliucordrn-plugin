@@ -1,8 +1,12 @@
-import { expect } from 'expect';
-import { copyFileSync, readFileSync, rmSync } from 'fs';
-import { test } from 'uvu';
+import expectJS = require('expect');
+import fs = require('fs');
+import uvu = require('uvu');
 import type { Context } from 'semantic-release';
-import { prepare } from '../index.js';
+import lifecycles = require('../');
+
+const { test } = uvu;
+const { copyFileSync, readFileSync, rmSync } = fs;
+const { expect } = expectJS;
 
 const context = {
     nextRelease: {
@@ -15,7 +19,7 @@ const context = {
 
 test('should throw error when manifest is invalid', () => {
     expect(() => {
-        prepare(
+        lifecycles.prepare(
             {
                 manifestFile: 'src/__tests__/manifest.invalid.json',
             },
@@ -30,7 +34,7 @@ test('should not throw error when manifest is valid', () => {
         'src/__tests__/manifest.valid-testing.json'
     );
     expect(() => {
-        prepare(
+        lifecycles.prepare(
             {
                 manifestFile: 'src/__tests__/manifest.valid-testing.json',
             },

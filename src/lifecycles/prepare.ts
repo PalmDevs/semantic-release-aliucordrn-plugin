@@ -1,8 +1,9 @@
-import { readFileSync, writeFileSync } from 'fs';
+import fs = require('fs');
 import type { Context } from 'semantic-release';
 import type PluginConfig from '../types/PluginConfig.js';
 
-export default function prepare(
+const { readFileSync, writeFileSync } = fs;
+const prepare = function prepare(
     { manifestFile }: Required<PluginConfig>,
     context: Context
 ) {
@@ -10,7 +11,7 @@ export default function prepare(
     logger.log('Loading manifest file: %s', manifestFile);
 
     const manifest = readFileSync(manifestFile, 'utf8');
-    const versionField = manifest.match(VersionFieldRegExp);
+    const versionField = manifest.match(prepare.VersionFieldRegExp);
     if (!versionField)
         throw new Error(`Cannot find version field in manifest file`);
 
@@ -22,6 +23,8 @@ export default function prepare(
 
     const newManifest = manifest.replace(wholeString, newVersionFieldString);
     writeFileSync(manifestFile, newManifest, 'utf8');
-}
+};
 
-export const VersionFieldRegExp = /"version"\s*:\s*"(.+)"/;
+prepare.VersionFieldRegExp = /"version"\s*:\s*"(.+)"/;
+
+export = prepare;

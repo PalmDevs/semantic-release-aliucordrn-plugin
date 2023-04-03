@@ -2,8 +2,8 @@
     "extends": "@tsconfig/strictest",
     "compilerOptions": {
         "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "NodeNext",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
         "outDir": "./dist",
         "removeComments": true,
         "importsNotUsedAsValues": "remove",

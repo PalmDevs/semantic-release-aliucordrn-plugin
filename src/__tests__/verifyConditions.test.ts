@@ -1,10 +1,13 @@
-import { expect } from 'expect';
-import { test } from 'uvu';
-import { verifyConditions } from '../index.js';
+import expectJS = require('expect');
+import uvu = require('uvu');
+import lifecycles = require('../');
+
+const { test } = uvu;
+const { expect } = expectJS;
 
 test("should throw error when manifest doesn't exist", () => {
     expect(() => {
-        verifyConditions({
+        lifecycles.verifyConditions({
             manifestFile: 'this-does-not-exist.json',
         });
     }).toThrowError(/Cannot find manifest file/);
@@ -12,7 +15,7 @@ test("should throw error when manifest doesn't exist", () => {
 
 test('should not throw error when manifest exists', () => {
     expect(() => {
-        verifyConditions({
+        lifecycles.verifyConditions({
             manifestFile: 'src/__tests__/manifest.valid.json',
         });
     }).not.toThrowError();
