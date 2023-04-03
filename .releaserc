@@ -34,11 +34,18 @@
     ],
     "@semantic-release/changelog",
     [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true,
+        "tarballDir": "dist"
+      }
+    ],
+    [
       "@semantic-release/git",
       {
         "assets": [
           "CHANGELOG.md",
-          "plugins/*/manifest.json"
+          "package.json"
         ]
       }
     ],
@@ -51,13 +58,6 @@
           }
         ],
         "successComment": false
-      }
-    ],
-    [
-      "@semantic-release/npm",
-      {
-        "npmPublish": true,
-        "tarballDir": "dist"
       }
     ],
     [
