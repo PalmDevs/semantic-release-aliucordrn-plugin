@@ -4,7 +4,7 @@
 
 | Step               | Description                                                                                          |
 | ------------------ | ---------------------------------------------------------------------------------------------------- |
-| `verifyConditions` | Verifies if the `manifestFile` configuration exists.                                                 |
+| `verifyConditions` | Verifies if the `manifestFile` configuration exists, and if the file is accessible.                  |
 | `prepare`          | Updates the manifest file's version supplied by `manifestFile` configuration                         |
 
 ## Install
@@ -16,8 +16,8 @@ $ npm install semantic-release-aliucordrn-plugin -D
 ### Options
 
 | Options        | Description                                                           | Default                                                                |
-| -------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `manifestFile` | The path to the manifest.json file which contains the plugin metadata | `${process.cwd()}/manifest.json`                                       |
+| -------------- | --------------------------------------------------------------------- | ----------------------------------------------------- |
+| `manifestFile` | The path to the manifest.json file which contains the plugin metadata | `manifest.json`                                       |
 
 ### Examples
 
