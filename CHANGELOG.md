@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/compare/v1.0.1...v1.0.2) (2023-04-03)
+
+
+### Bug Fixes
+
+* make plugin importable by converting to cjs ([e9aa67c](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/commit/e9aa67c4b556f789d72da1ba8ccb70be3387c200))
+
 ## [1.0.1](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/compare/v1.0.0...v1.0.1) (2023-04-03)
 
 
