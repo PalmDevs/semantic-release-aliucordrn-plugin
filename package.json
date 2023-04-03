@@ -1,0 +1,45 @@
+{
+  "name": "semantic-release-aliucord-plugins",
+  "version": "1.0.0",
+  "description": "semantic-release plugin for AliucordRN plugin development",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "ncc build src/index.ts -m -s",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "test": "node --loader tsm node_modules/uvu/bin.js src/__tests__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PalmDevs/semantic-release-aliucordrn-plugins.git"
+  },
+  "keywords": [
+    "aliucord",
+    "aliucordrn",
+    "discord",
+    "semantic-release"
+  ],
+  "author": "PalmDevs",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/PalmDevs/semantic-release-aliucordrn-plugins/issues"
+  },
+  "homepage": "https://github.com/PalmDevs/semantic-release-aliucordrn-plugins#readme",
+  "devDependencies": {
+    "@saithodev/semantic-release-backmerge": "^3.1.0",
+    "@tsconfig/strictest": "^2.0.0",
+    "@types/semantic-release": "^20.0.1",
+    "@vercel/ncc": "^0.36.1",
+    "expect": "^29.5.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7",
+    "tsm": "^2.3.0",
+    "typescript": "^5.0.3",
+    "uvu": "^0.5.6"
+  },
+  "dependencies": {
+    "semantic-release": "^21.0.1"
+  }
+}
