@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/compare/v1.0.2...v1.0.3) (2023-04-07)
+
+
+### Bug Fixes
+
+* issues when resolving paths, add more logging ([f47636f](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/commit/f47636fe922bad88f661ddd32f1bc8988b76780b))
+
 ## [1.0.2](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/compare/v1.0.1...v1.0.2) (2023-04-03)
 
 
