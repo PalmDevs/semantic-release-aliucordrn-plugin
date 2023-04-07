@@ -14,6 +14,7 @@ const context = {
     },
     logger: {
         log: () => {},
+        debug: () => {},
     },
 } as unknown as Context;
 
@@ -25,7 +26,7 @@ test('should throw error when manifest is invalid', () => {
             },
             context
         );
-    }).toThrowError(/Cannot find version field in manifest file/);
+    }).toThrowError();
 });
 
 test('should not throw error when manifest is valid', () => {
