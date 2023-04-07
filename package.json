@@ -8,7 +8,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "ncc build src/index.ts -m -s",
+    "build": "ncc build src/index.ts -m",
     "format": "prettier --write .",
     "prepare": "husky install",
     "test": "uvu -r tsm src/__tests__"
