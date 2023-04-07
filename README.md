@@ -1,11 +1,11 @@
 # semantic-release-aliucordrn-plugin
 
-[**semantic-release**](https://github.com/semantic-release/semantic-release) to bump [**AliucordRN**](https://github.com/Aliucord/AliucordRN) plugin version in the manifest file.
+[**semantic-release**](https://github.com/semantic-release/semantic-release) to update an [**AliucordRN**](https://github.com/Aliucord/AliucordRN) plugin's `version` field in the **manifest.json** file.
 
-| Step               | Description                                                                                          |
-| ------------------ | ---------------------------------------------------------------------------------------------------- |
-| `verifyConditions` | Verifies if the `manifestFile` configuration exists, and if the file is accessible.                  |
-| `prepare`          | Updates the manifest file's version supplied by `manifestFile` configuration                         |
+| Step               | Description                                                                                           |
+| ------------------ | ----------------------------------------------------------------------------------------------------- |
+| `verifyConditions` | Verify if the file `manifestFile` in configuration exists.                                            |
+| `prepare`          | Verify if the contents of file manifest file is valid and updates the manifest file's version field.  |
 
 ## Install
 
@@ -15,9 +15,9 @@ $ npm install semantic-release-aliucordrn-plugin -D
 
 ### Options
 
-| Options        | Description                                                           | Default                                                                |
-| -------------- | --------------------------------------------------------------------- | ----------------------------------------------------- |
-| `manifestFile` | The path to the manifest.json file which contains the plugin metadata | `manifest.json`                                       |
+| Options        | Description                                                                 | Default                                                                                                                      |
+| -------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `manifestFile` | The path to the **manifest.json** file which contains the plugin's metadata | `${CWD}/manifest.json`<br/><br/>Where `CWD` is `context.cwd` given by **semantic-release** or if undefined, `process.cwd()`. |
 
 ### Examples
 
@@ -38,12 +38,6 @@ $ npm install semantic-release-aliucordrn-plugin -D
         "assets": [
           "manifest.json"
         ]
-      }
-    ],
-    [
-      "@semantic-release/github",
-      {
-        "assets": "dist/*.tgz"
       }
     ]
   ]
