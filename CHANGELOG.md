@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/compare/v1.0.3...v1.0.4) (2023-04-16)
+
+
+### Bug Fixes
+
+* **lifecycles/prepare:** reading from wrong cwd ([cdaf326](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/commit/cdaf3266726aa3fcfee830267376ae8eec7a7b37))
+* **lifecycles/verifyConditions:** add more validation guards ([80254bd](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/commit/80254bd559ceafe6084e64e7feea51e9c5be776c))
+
 ## [1.0.3](https://github.com/PalmDevs/semantic-release-aliucordrn-plugin/compare/v1.0.2...v1.0.3) (2023-04-07)
 
 
