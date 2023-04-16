@@ -8,8 +8,8 @@ export = function verifyConditions(
     context: Config & Context
 ) {
     const { logger } = context;
+    if (!pluginConfig) throw new AggregateError(['No options passed']);
 
-    if (!pluginConfig) pluginConfig = {};
     pluginConfig.manifestFile = path.join(
         context.cwd ?? process.cwd(),
         pluginConfig.manifestFile ?? 'manifest.json'
