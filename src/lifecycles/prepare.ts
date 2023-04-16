@@ -1,17 +1,23 @@
 import fs = require('fs');
-import type { Context } from 'semantic-release';
+import path = require('path');
+import type { Config, Context } from 'semantic-release';
 import type PluginConfig from '../types/PluginConfig.js';
 
 const prepare = function prepare(
-    { manifestFile }: Required<PluginConfig>,
-    context: Context
+    pluginConfig: PluginConfig | null | undefined,
+    context: Config & Context
 ) {
     const { logger } = context;
-    logger.log('Loading manifest file: %s', manifestFile);
+    const resolvedManifestFile = path.join(
+        context.cwd ?? process.cwd(),
+        pluginConfig?.manifestFile ?? 'manifest.json'
+    );
 
-    const manifest = fs.readFileSync(manifestFile, 'utf8');
+    logger.log('Loading manifest file: %s', resolvedManifestFile);
 
-    logger.debug('File contents:\n%s', manifest);
+    const manifest = fs.readFileSync(resolvedManifestFile, 'utf8');
+
+    logger.debug('Manifest file contents:\n%s', manifest);
 
     const versionField = manifest.match(prepare.VersionFieldRegExp);
     if (!versionField)
@@ -28,9 +34,9 @@ const prepare = function prepare(
     const newManifest = manifest.replace(wholeString, newVersionFieldString);
 
     logger.debug('New file contents:\n%s', newManifest);
-    logger.debug('Writing to file %s', manifestFile);
+    logger.debug('Writing to file %s', resolvedManifestFile);
 
-    fs.writeFileSync(manifestFile, newManifest, 'utf8');
+    fs.writeFileSync(resolvedManifestFile, newManifest, 'utf8');
 };
 
 prepare.VersionFieldRegExp = /"version"\s*:\s*"(.+)"/;
